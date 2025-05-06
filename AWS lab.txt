@@ -1,0 +1,363 @@
+Assignment No:01
+Title: Create an account in AWS and configure budget
+Step-1:
+Open the AWS Management Console and click on the user name in the top right corner and click on the Billing and cost management.
+Step-2:
+Select the Budgets option from the left side.
+Step-3:
+Click on the Create a budget button to create a new budget.
+Step-4:
+Choose the Customize to customize the budget.
+Step-5:
+Write essential details here like name of the budget, period, budget .
+Step-6:
+Click on the Add an alert and Add the threshold value and email to send notification.
+Step-7:
+Review all the information and click Create Budget to create budget.
+
+
+Assignment No:02
+Title: Create MFA for authentication.
+Step-1:
+Open the AWS Management Console and click on the user name in the top right corner and click on the Security credentials.
+Step-2:
+Click on the Assign MFA in the yellow box.
+Step-3:
+Name the device and select the device.
+Step-4:
+Scan the qr code using the device or a authenticator app in mobile
+Step-5:
+Multifactor authentication is added to the account.
+Step-6:
+Now during login MFA code is required.
+
+Assignment No:03
+Title: Create IAM User and give full access to S3.
+Step-1:
+Open the AWS Management Console and click on services on the top left corner.
+Step-2:
+Click on all services and open the IAM.
+Step-3:
+Open the Users in Access management in the left side.
+Step-4:
+Now click on the Create user.
+Step-5:
+Now give IAM user a name and check the Provide user access to the AWS management console and select the user type as I want to create an IAM user then choose custom password in the console password section then choose password then click on next.
+Step-6:
+Now select Attach policies directly in the Permissions options. Now check the AmazonS3FullAccess box and click on next.
+Step-7:
+Now review the account and click on create user.
+Step-8:
+Now download the csv.
+Step-9:
+Now login to the IAM user account by giving credentials from the csv file.
+Step-10:
+Login into the IAM user is successful.
+
+Assignment No:04
+Title: Create a private bucket in in AWS. Upload a file and check whether you can access the file or not
+Step-1:
+Search S3 in the AWS management console
+Step-2:
+Click on the S3 and click on create bucket.
+Step-3:
+Name the bucket the select all the necessary settings uncheck “block all public access” and enable bucket versioning.
+Step-4:
+Now click on the name of the created bucket.
+Step-5:
+Click on upload to upload file.
+Step-6:
+Select the file file to upload and click open. Then press upload
+Step-7:
+Now click on the name of the file uploaded
+Step-8:
+Copy the Object URL and open it in incognito mode.
+Step-9:
+The access is denied.
+
+
+Assignment No:05
+Title: Create a public bucket in in AWS. Upload a file and give the necessary permissions to check whether the file url is working.
+Step-1:
+Search S3 in the AWS management console
+Step-2:
+Click on the S3 and click on create bucket.
+Step-3:
+Name the bucket the select all the necessary settings uncheck “block all public access” and enable bucket versioning.
+Step-4:
+Now click on the name of the created bucket.
+Step-5:
+Click on upload to upload file.
+Step-6:
+Select the file file to upload and click open. Then press upload
+Step-7:
+Now click on the name of the file uploaded
+Step-8:
+Copy the Object URL and open it in incognito mode.
+Step-9:
+Now the access is denied.
+Step-10:
+Open the permissions and click on edit.
+Step-10:
+Now check on read of objects and objects acl everyone(public access).
+Step-10:
+Now copy the object url and the file will download.
+
+
+Assignment No:06
+Title: Upload a static website on S3.
+Step-1:
+Search S3 in the AWS management console.
+Step-2:
+Click on the S3 and click on create bucket.
+Step-3:
+Name the bucket the select all the necessary settings uncheck “block all public access” and enable bucket versioning.
+
+Step-4:
+Now click on the name of the created bucket.
+Step-5:
+Open the properties and scroll down to Static website hosting then click on edit.
+Step-5:
+Click on enable and give the name of the home page in index document and Next page in error document click save changes.
+Step-5:
+Click on upload to upload file.
+Step-6:
+Select the files to be uploaded and click on open.
+Step-7:
+Now click on the name of the file uploaded
+Step-8:
+Open the permissions and edit
+Step-9:
+Edit the ACL set everyone to read.
+Step-8:
+Copy the Object URL of the home page and open it in incognito mode.
+Step-10:
+Open the permissions and click on edit.
+
+
+Assignment No:07
+Title: Hosting a website on EC2.
+Step-1: Search EC2 in the AWS management console.
+Step-2: Click on the EC2 and click on Launch Instance.
+Step-3: Name the Instance then Select the OS for the instance.
+
+Step-4: Now click on key pairs select an existing key pair or click on create new key pair then name the key pair and select newly created key pair. Then allow SSH traffic from anywhere and allow http and https traffic from internet by checking the boxes below. Then configure storage and click on Launch Instance.
+Step-5: After the Instance created goto Instances using the window in left side and click on the Instance id of the instance.
+Step-6: Copy the Public IPv4 address of the instance.
+Step-7: Then open Bitvise SSH client and open the client key manager and import the .pem file downloaded after creating the key pair. Then paste the Public IPv4 address in Host IP. In the authentication select the initial method as public key give username and select the client key that imported using the client key manager. Then login and then open new terminal console from left side.
+Step-8: Set up the Ubuntu server by updating and upgrading it using the commands sudo apt-get update and sudo apt-get upgrade
+Step-9:Now set up the web server by downloading nginx and ngi using commands sudo apt install nginx and sudo apt install ngi. Then open the Public IPv4 of the instance in a incognito tab to see the nginx welcome page.
+Step-10: Now open the terminal again and navigate to the location /var/www using command cd ../../var/www and then change the permission of the html directory using command sudo chmod 777 html to give it full permission.
+Step-11: Then open the bitvise and open the New SFTP window and navigate to /var/www/html of the remote files section using the top bar then just drag and drop the html files from local files section to remote files section.
+Step-12: Open the Public IPv4 of the instance in incognito mode.
+
+
+Assignment No:08
+Title: Deploy a project from a local machine to GitHub and vice versa.
+Step-1:
+Open github in browser and click on login.
+Step-2:
+Log into github using your username or email and password.
+Step-3:
+At the left side click on the New button to create new repository.
+Step-4:
+Give a name to the repository and click on create repository.
+Step-5:
+Now copy the link of the repository from quick setup.
+Step-6:
+Open the local folder and right click then click on Open Git Bash here.
+Step-7:
+Initialize an empty git repository using the command git init.
+Step-8:
+Then add the origin using command git remote add origin and paste the link copied from github.
+Step-9:
+Add all the files in the folder using the command git add .
+Step-10:
+Now commit the changes with a message using command git commit -m “message”.
+Step-11:
+Select the branch of the repository to master using the command git branch -M master.
+Step-12:
+Now push the code to the github repository using command git push -u origin master.
+Step-13:
+Now refresh the github page to find the code .
+Step-14:
+Now to pull the code from github to a local directory open the github page and click on the code button and copy the link of the repository.
+Step-15:
+Open another folder and open git bash there and initialize a empty git repository.
+Step-16:
+Then run use the command git clone and paste the link copied from github.
+Step-17:
+Now open the folder and the code is cloned from github.
+
+
+
+Assignment No:09
+Title: Deploy a project from GitHub to EC2..
+Step-1:
+Upload required files to github
+Step-2:
+Click on the profile icon and open settings then scroll down in the left side and open developer settings then open the token(classic) under the personal access tokens.
+
+Step-3:
+Click on generate new token and then click on generate new token(classic).
+Step-4:
+Give a name to the token in the note field and check all the scopes and save the token id.
+Step-5:
+Log into AWS and open EC2.
+Step-6:
+Click on launch instance.
+Step-7:
+Give a name to the instance and select the operating system then check the 3 boxes to allow SSH, HTTP and HTTPS traffics and click launch instance.
+Step-8:
+Now open instances and click of the instance Id of the instance.
+Step-9:
+Copy the IPv4 address.
+Step-10:
+open bitvise client and paste the ip in host and set up authentication using the key pair then login and after logging in open new terminal window.
+Step-11:
+Then set up the instance using command sudo apt-get update and sudo apt-get upgrade.
+Step-12:
+Now install nginx for setting up the web server.
+Step-13:
+Now clone the github repository from github using command git clone paste the link of the repository.
+Step-14:
+Then open the directory that is cloned using command cd name of the directory. Then install nodejs using commands curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash – and sudo apt-get install nodejs.
+Step-15:
+After installing nodejs use npm install command to install required dependencies.
+Step-16:
+Now open aws and open the current instance then scroll down and goto security.
+Step-17:
+Then click on the link in security groups then click on edit inbound rules.
+Step-18:
+Click on add rule and select the type of new rule custom tcp port range 4000 source 0.0.0.0 or anywhere then click on save rule.
+Step-19:
+Open the terminal console and start the server using command node index.js .
+Step-20:
+Now copy the IPv4 address of the instance and paste it and the put the port like this IP address:Port here IP address:4000 .
+Step-21:
+Incase of change in the file in github run the git pull command to update it here.
+
+
+
+Assignment No:10
+Title: Deploy a project from GitHub to EC2 by creating a new security group and user data.
+Step-1:
+Upload required files to github
+Step-2:
+Log into AWS and open EC2.
+Step-3:
+Then open the security groups from network and security in the left side and select all the security group except default and delete them then click on create security group
+Step-4:
+Click on Create security group then give a name and description of the security group and set up all inbound rules. Include SSH, HTTP, HTTPS and custom TCP then click on save rules.
+Step-5:
+Click on launch instance.
+Step-6:
+Give a name to the instance and select the operating system then in the network settings click on existing security group and select the security group just created.
+Step-7:
+Click on the advance details and scroll down to the user data and run all required commands then press launch instance.
+Step-8:
+Now open instances and click of the instance Id of the instance.
+Step-9:
+Now copy the IPv4 address.
+Step-10:
+Open Bitvise and paste the IP address of the instance in the host and give required credentials in authentication and click log in .
+Step-11:
+After then open a new terminal window and clone the git repository using command git clone link of the repository.
+Step-12:
+Change the directory to the github repository name and install required dependencies using command npm install.
+Step-13:
+Then start the server using command node index.js .
+Step-14:
+Now copy the IPv4 address of the instance and paste it and the put the port like this IP address:Port here IP address:4000 .
+
+
+Assignment No:11
+Title: Build scaling plans in AWS that balance the load on different EC2 instances.
+Step-1:
+Upload required files to github
+Step-2:
+Log into AWS and open EC2.
+Step-3:
+Open the launch templates from left side.
+Step-4:
+Give name and description to the template and then check Provide guidance to help me setup a template that I can use with EC2 auto scaling then open the quick start in the os image then select instance type, key pair and security group. After that additional details scroll down to user data and provide all the required commands then click on create launch template.
+
+Step-5:
+Next open the auto scaling groups and click on create auto scaling group. Then name the group then select the launch template that we just created then select availability zones then click next.
+Step-6:
+Here attach a load balancer then network layer balancer after that name the load balancer and create a target group then attach a vpc lattice service and next.
+Step-7:
+After that specify the desired capacity (here 2) then give min and max desired capacity and then select target tracking scaling policy and give the policy a name then select the policy for createing new server minimum load. Next and then review it and create the group.
+
+Step-8:
+Now goto the instances and notice there are 2 instances automatically created. If we try to delete them new instances created automatically within few seconds.
+Step-9:
+Copy public IPv4 of any of the running instances and open it to see the website opened.
+Step-10:
+Now open both instances and write the below bash or shell code and run it in them. It will increase the load in the servers.
+Step-11:
+After a certain threshold the servers will over load and the auto scaling group will create a new server to handle the load. Open CPU utilization graph of the
+
+
+Assignment No:12
+Title: Deploy and run the project in AWS without using the port.
+Step-1:
+Upload required files to github
+Step-2:
+Log into AWS and open EC2.
+Step-3:
+Open the EC2
+Step-4:
+Create ec2 instance and add the below bash commands in user data section.
+Step-5:
+After creating instance the site should successfully run on the port 4000.
+Step-6:
+Now log into bitvise and cd ../.. to go to root directory then open etc with cd etc and nginx with cd nignx and sites-available with cd sites-available then change the permissions of the default file using sudo chmod 777 default. Then edit the default file with nano default and change the code to what is given below and close the editor then restart the nginx with sudo systemctl restart nginx.
+Step-7:
+Now the site runs on IP without giving the port.
+
+
+Assignment No : 13
+Title : Create a workmail for your Organization.
+Step 1: First go to the searchbar and type workmail in the (N.Virginia) region.
+Step 2: Create a workmail organization and then select for free test domain and set an alias name.
+Step 3: Then go to the user in the Organization created above and add user then give the username name with password.
+Step 4: Go to the organization which we have created and click on the Amazon WorkMail web application.
+Step 5: Fill the username and password and Sign in.
+Step 6: New item > New email : Send a message to my own Gmail from Amazon WorkMail.
+Step 7: Again if I send the mail from my own Gmail then this is what we received in Amazon WorkMail.
+We’ve successfully created a WorkMail for our Organization.
+
+
+
+Assignment : 14
+Title : Create an Elastic IP for an instance.
+Step 1: Create an EC2 instance as we’ve created before.
+Step 2: Go to instance and Restart (stop and then start again) the created instance.
+Step 3: Go to Elastic IPs and click on Allocate IP to create an Elastic IP and Associate it.
+
+Step 4: Check the Instance IP has been changed as same as the newly created Elastic IP.
+So, we’ve successfully Created an Elastic IP for an instance.
+At last Delete(Disassociate > Release) the Elastic IP and the created instance.
+
+
+
+
+Assignment No:15
+Title: Create a Serverless computing service.
+Step-1:
+Log into AWS and open Lambda.
+Step-2:
+Click on create a function
+Step-3:
+Fill in basic details like function name, runtime and architecture.
+Step-4:
+Function is created now open the function.
+Step-5:
+Scroll down and open the test section and create a new event. Give it a name and test the event before saving it.
+Step-6:
+Goto configuration and function url then create function URL and choose auth type to none and save.
+Step-7:
+Now go back to code section and write the required function code and test the code in the event we created then deploy it.
+Step-8:
+Copy the the function url and open it in incognito url.
